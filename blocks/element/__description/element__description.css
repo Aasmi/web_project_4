@@ -1,0 +1,22 @@
+@import url('../__description/_text/element__description_text.css');
+@import url('../__description/_vector/element__description_vector.css');
+
+.element__description{
+    width: 246px;    
+    margin:25px auto auto auto;
+    display:flex;
+    justify-content: space-between;    
+}
+
+@media screen and (max-width:1100px){
+    
+}
+
+@media screen and (max-width:780px){
+   
+}
+
+@media screen and (max-width:350px){
+         
+    
+}

@@ -1,0 +1,13 @@
+@media screen and (max-width:1100px){
+    
+}
+
+@media screen and (max-width:780px){
+   
+}
+
+@media screen and (max-width:350px){
+  .profile__info_job {
+    margin: auto;
+  }    
+}
