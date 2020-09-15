@@ -16,11 +16,11 @@
                 <section class="profile">
                     <div class="profile__avatar"></div>
                     <div class="profile__info">
-                            <p class="profile__name">Jacques Cousteau</p>
-                            <button class="profile__edit-button" type="submit"></button>
-                            <p class="profile__AboutMe">Explorer</p>                          
+                            <h1 class="profile__name">Jacques Cousteau</h1>
+                            <button class="profile__edit-button" type="button"></button>
+                            <p class="profile__About-Me">Explorer</p>                          
                     </div>
-                    <button class="profile__add-button" type="submit"></button>                 
+                    <button class="profile__add-button" type="button"></button>                 
                 </section>
                 
                 <section>
@@ -29,7 +29,7 @@
                         <img src="./images/Yosemite_valley.png" alt="Yosemite Valley" class="element__image">
                         <div class="element__description">
                             <h2 class="element__text">Yosemite Valley</h2>
-                            <button class="element__like-button" type="submit"></button>
+                            <button class="element__like-button" type="button"></button>
                         </div>
                     </li>
 
@@ -37,7 +37,7 @@
                         <img src="./images/Lake_louise.png" alt="Lake Louise" class="element__image">
                         <div class="element__description">
                             <h2 class="element__text">Lake Louise</h2>
-                            <button class="element__like-button" type="submit"></button>
+                            <button class="element__like-button" type="button"></button>
                         </div>
                     </li>
 
@@ -45,7 +45,7 @@
                         <img src="./images/bald_mountains.png" alt="Bald Mountains" class="element__image">
                         <div class="element__description">
                             <h2 class="element__text">Bald Mountains</h2>
-                            <button class="element__like-button" type="submit"></button>
+                            <button class="element__like-button" type="button"></button>
                         </div>
                     </li>
 
@@ -53,7 +53,7 @@
                         <img src="./images/latemar.png" alt="Latemar" class="element__image">
                         <div class="element__description">
                             <h2 class="element__text">Latemar</h2>
-                            <button class="element__like-button" type="submit"></button>
+                            <button class="element__like-button" type="button"></button>
                         </div>
                     </li>
 
@@ -61,7 +61,7 @@
                         <img src="./images/vanoise_national.png" alt="Vanoise National Park" class="element__image">
                         <div class="element__description">
                             <h2 class="element__text">Vanoise National Park</h2>
-                            <button class="element__like-button" type="submit"></button>
+                            <button class="element__like-button" type="button"></button>
                         </div>
                     </li>
 
@@ -69,7 +69,7 @@
                         <img src="./images/lago_de_braies.png" alt="Lago di Braies" class="element__image">
                         <div class="element__description">
                             <h2 class="element__text">Lago di Braies</h2>
-                            <button class="element__like-button" type="submit"></button>
+                            <button class="element__like-button" type="button"></button>
                         </div>
                     </li>                
                 </ul>
@@ -79,11 +79,11 @@
                 <p>&copy; 2020 Around The U.S.</p>               
             </footer>
             <div class="popup">
-                <button class="popup__close-button"></button>
-                <form action="#" class="popup__container">
-                    <h1 class="popup__text">Edit Profile</h1>
-                    <input type="text" value="" placeholder="Name" class="popup__field popup__field_name" name="profileName">
-                    <input type="text" value="" placeholder="About Me" class="popup__field popup__field_aboutme" name="profileAboutMe">
+                <button class="popup__close-button" type="button"></button>
+                <form action="#" class="popup__container" name="edit-form">
+                    <h2 class="popup__text">Edit Profile</h2>
+                    <input type="text" value="" placeholder="Name" class="popup__field popup__field_type_name" name="profileName" required>
+                    <input type="text" value="" placeholder="About Me" class="popup__field popup__field_type_aboutme" name="profileAboutMe" required>
                     <button class="popup__save-button" type="submit">Save</button>
                 </form>
             </div>

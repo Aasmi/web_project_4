@@ -1,4 +1,4 @@
-.profile__AboutMe{
+.profile__About-Me{
     width: 318px;   
     font-style: normal;
     font-weight: normal;
@@ -11,12 +11,9 @@
     overflow: hidden;
 }
 
-@media screen and (max-width:1100px){
-    
-}
 
 @media screen and (max-width:780px){
-  .profile__AboutMe{
+  .profile__About-Me{
     width: 301px;
     font-size: 22px;
     text-align: center;
@@ -25,7 +22,7 @@
 
 
 @media screen and (max-width:350px){
-  .profile__AboutMe{
+  .profile__About-Me{
     width: 280px;
     font-size: 14px;
     text-align: center;

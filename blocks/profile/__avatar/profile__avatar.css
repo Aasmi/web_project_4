@@ -5,12 +5,9 @@
     background-repeat: no-repeat ;
     background-size: contain;
     clip-path: circle(60px at center);
-    border:0.1px solid red;
+   
 }
 
-@media screen and (max-width:1100px){
-    
-}
 
 @media screen and (max-width:780px){
     .profile__avatar{
