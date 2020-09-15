@@ -1,16 +1,13 @@
-# Project 4: Around The U.S.
+# Project Name: Around The U.S.
 
-### Overview
+### Description
 
-* Figma
-* Images
+This project will be used to maintain a site for scenic places Around U.S. Individual contributor can add the places of their interest on the site and a small introduction about themselves along with their name. 
 
-**Figma**
+This site will be developed in coming sprints and initial structure for the same is developed in this project
 
-* [Link to the project in Figma](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+* [Link to the project]( https://aasmi.github.io/web_project_4/)
 
 **Images**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
+* A link to all images will be added here.

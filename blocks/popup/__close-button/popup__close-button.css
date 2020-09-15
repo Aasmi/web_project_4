@@ -6,19 +6,29 @@
     width: 41px;
     height: 41px;
     text-align: center;
-    margin-left:30%;
+    margin-left:35%;    
     padding:0px;
     background-color:transparent;
     border-style:none;
+    cursor: pointer;
+    background-image: url('../../../images/close_button.svg');
+    background-size: contain;
+    
 }
 
 .popup__close-button:hover {
     opacity: .6; 
-  
+    transform: rotate(45deg);
   }
+
+  
   @media screen and (max-width: 350px)
   {
     .popup__close-button {
-      margin-left: 30%;      
+      margin-left: 75%;  
+      margin-top:50%;    
     }
   }
+
+
+  

@@ -12,10 +12,6 @@
 }
 
 
-@media screen and (max-width:1100px){
-    
-}
-
 @media screen and (max-width:780px){
     .elements{
         width:600px;
@@ -26,7 +22,6 @@
 @media screen and (max-width:350px){
     .elements{
         width: 282px;
-        height: 2268px;
         margin: auto 19px auto 19px;
     }
     

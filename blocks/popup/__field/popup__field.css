@@ -1,6 +1,9 @@
+@import url('./_name/popup__field_name.css');
+@import url('./_aboutme/popup__field_aboutme.css');
+
 .popup__field{
     width: 358px;
-    height: 27.26px;
-    border:0.1px solid red;
+   /* height: 27.26px;*/
     margin:30px auto auto auto;
+    
 }

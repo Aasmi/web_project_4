@@ -4,104 +4,89 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="Author" content="Aasmi Maam">
-        <link rel="stylesheet" href="./index.css">  
+        <link rel="stylesheet" href="./pages/index.css">  
         <title>Around The U.S.</title>
     </head>
     <body class="page">
         <div class="page__container">
             <header class="header">
-                <img class="header__vector" src="./images/Vector.png"></img>
+                <img class="header__vector" src="./images/logo.svg" alt="Around U.S">
             </header>
             <main class="content">
                 <section class="profile">
-                    <div class ="profile__avatar"></div>          
+                    <div class="profile__avatar"></div>
                     <div class="profile__info">
-                            <div class="profile__info_bio">
-                              <h2 class="profile__info_name">Jacques Cousteau</h2>
-                              <button class="profile__info_edit-button"></button>
-                            </div>
-                            <div class="profile__info_job">
-                               <p class="profile__info_job-details">Explorer</p>
-                            </div>   
-                    </div>    
-                    <button class="profile__add-button"></button>
-              </section>      
-
+                            <p class="profile__name">Jacques Cousteau</p>
+                            <button class="profile__edit-button" type="submit"></button>
+                            <p class="profile__AboutMe">Explorer</p>                          
+                    </div>
+                    <button class="profile__add-button" type="submit"></button>                 
+                </section>
+                
                 <section>
                 <ul class="elements">
                     <li class="element">
                         <img src="./images/Yosemite_valley.png" alt="Yosemite Valley" class="element__image">
                         <div class="element__description">
-                            <p class="element__description_text">Yosemite Valley</p>
-                            <span class="element__description_vector">
-                                <img src="./images/heart.png" alt="Like">
-                            </span>
+                            <h2 class="element__text">Yosemite Valley</h2>
+                            <button class="element__like-button" type="submit"></button>
                         </div>
                     </li>
 
                     <li class="element">
                         <img src="./images/Lake_louise.png" alt="Lake Louise" class="element__image">
                         <div class="element__description">
-                            <p class="element__description_text">Lake Louise</p>
-                            <span class="element__description_vector">
-                                <img src="./images/heart.png" alt="Like">
-                            </span>
+                            <h2 class="element__text">Lake Louise</h2>
+                            <button class="element__like-button" type="submit"></button>
                         </div>
                     </li>
 
                     <li class="element">
                         <img src="./images/bald_mountains.png" alt="Bald Mountains" class="element__image">
                         <div class="element__description">
-                            <p class="element__description_text">Bald Mountains</p>
-                            <span class="element__description_vector">
-                                <img src="./images/heart.png" alt="Like">
-                            </span>
+                            <h2 class="element__text">Bald Mountains</h2>
+                            <button class="element__like-button" type="submit"></button>
                         </div>
                     </li>
 
                     <li class="element">
                         <img src="./images/latemar.png" alt="Latemar" class="element__image">
                         <div class="element__description">
-                            <p class="element__description_text">Latemar</p>
-                            <span class="element__description_vector">
-                                <img src="./images/heart.png" alt="Like">
-                            </span>
+                            <h2 class="element__text">Latemar</h2>
+                            <button class="element__like-button" type="submit"></button>
                         </div>
                     </li>
 
                     <li class="element">
                         <img src="./images/vanoise_national.png" alt="Vanoise National Park" class="element__image">
                         <div class="element__description">
-                            <p class="element__description_text">Vanoise National Park</p>
-                            <span class="element__description_vector">
-                                <img src="./images/heart.png" alt="Like">
-                            </span>
+                            <h2 class="element__text">Vanoise National Park</h2>
+                            <button class="element__like-button" type="submit"></button>
                         </div>
                     </li>
 
                     <li class="element">
                         <img src="./images/lago_de_braies.png" alt="Lago di Braies" class="element__image">
                         <div class="element__description">
-                            <p class="element__description_text">Lago di Braies</p>
-                            <span class="element__description_vector">
-                                <img src="./images/heart.png" alt="Like">
-                            </span>
+                            <h2 class="element__text">Lago di Braies</h2>
+                            <button class="element__like-button" type="submit"></button>
                         </div>
                     </li>                
                 </ul>
                 </section>
             </main>
-            <footer class="footer">                
+            <footer class="footer"> 
+                <p>&copy; 2020 Around The U.S.</p>               
             </footer>
-            <section class="popup">
-                <button class="popup__close-button">&times;</button>
+            <div class="popup">
+                <button class="popup__close-button"></button>
                 <form action="#" class="popup__container">
-                    <p class="popup__text">Edit Profile</p>
-                    <input type="text" value="Jacques Cousteau" placeholder="Name" class="popup__field-name">
-                    <input type="text" value="Explorer" placeholder="About Me" class="popup__field-aboutme">
-                    <button class="popup__save-button">Save</button>
+                    <h1 class="popup__text">Edit Profile</h1>
+                    <input type="text" value="" placeholder="Name" class="popup__field popup__field_name" name="profileName">
+                    <input type="text" value="" placeholder="About Me" class="popup__field popup__field_aboutme" name="profileAboutMe">
+                    <button class="popup__save-button" type="submit">Save</button>
                 </form>
-            </section>
+            </div>
 
         </div>
         <script src="indexscript.js"></script>
