@@ -5,7 +5,7 @@
     width: 358px;
     margin:30px auto auto auto;
     border: none;
-    border-bottom: 1px solid rgb(0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 @media screen and (max-width: 350px) {

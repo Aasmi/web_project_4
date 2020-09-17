@@ -18,7 +18,7 @@
                     <div class="profile__info">
                             <h1 class="profile__name">Jacques Cousteau</h1>
                             <button class="profile__edit-button" type="button"></button>
-                            <p class="profile__About-Me">Explorer</p>                          
+                            <p class="profile__about-me">Explorer</p>                          
                     </div>
                     <button class="profile__add-button" type="button"></button>                 
                 </section>
@@ -78,13 +78,15 @@
             <footer class="footer"> 
                 <p>&copy; 2020 Around The U.S.</p>               
             </footer>
-            <div class="popup">
-                <button class="popup__close-button" type="button"></button>
-                <form action="#" class="popup__container" name="edit-form">
-                    <h2 class="popup__text">Edit Profile</h2>
-                    <input type="text" value="" placeholder="Name" class="popup__field popup__field_type_name" name="profileName" required>
-                    <input type="text" value="" placeholder="About Me" class="popup__field popup__field_type_aboutme" name="profileAboutMe" required>
-                    <button class="popup__save-button" type="submit">Save</button>
+            <div class="popup"> 
+                <form action="#" class="popup__container" name="edit-form"> 
+                    <button class="popup__close-button" type="button"></button>              
+                    <div class="popup__edit-form">
+                        <h2 class="popup__text">Edit Profile</h2>
+                        <input type="text" value="" placeholder="Name" class="popup__field popup__field_type_name" name="profileName" required>
+                        <input type="text" value="" placeholder="About Me" class="popup__field popup__field_type_aboutme" name="profileAboutMe" required>
+                        <button class="popup__save-button" type="submit" onclick="fillProfileValues()">Save</button>
+                    </div>
                 </form>
             </div>
 

@@ -6,39 +6,24 @@
     width: 41px;
     height: 41px;
     text-align: center;
-    margin-left:30%;    
-    padding:0px;
+    position:absolute;
+    top:0px;       
     background-color:transparent;
     border-style:none;
     background-image: url('../../../images/close_button.svg');
-    background-size: contain;
-    
+    background-size:cover;
+    padding:0px;
+    margin-left:98%;
 }
 
 .popup__close-button:hover {
     opacity: .6; 
   }
- 
-  @media screen and (max-width: 1140px)
-  {
-    .popup__close-button {
-      margin-left: 40%;  
-    }
-  }
-
-  @media screen and (max-width: 780px)
-  {
-    .popup__close-button {
-      margin-left: 60%;  
-    }
-  }
-  
+   
   @media screen and (max-width: 350px)
   {
     .popup__close-button {
-      margin-left: 77%;  
-      margin-top:60%;    
-    }
+      margin-left: 96%;  
   }
 
 
