@@ -16,32 +16,25 @@ const profileAboutme = document.querySelector('.profile__about-me');
 
 
 /*****************Function Definitions ****************/
-function togglePopup(){  
-    
+function togglePopup(){     
     if (!popup.classList.contains("popup_opened")){
         inputName.value = profileName.textContent;
         inputAboutme.value = profileAboutme.textContent;
-    }
-       
+    }       
     popup.classList.toggle('popup_opened');
 }
 
 function fillProfileValues(){
-    event.preventDefault();  
-      
+    event.preventDefault();       
     profileName.textContent = inputName.value;
-    profileAboutme.textContent = inputAboutme.value;
-    
-        
+    profileAboutme.textContent = inputAboutme.value;        
     togglePopup()
 }
 
 /***************************Program *******************/
 
 editButton.addEventListener('click', togglePopup);
-
 closeButton.addEventListener('click',togglePopup);
-
 popupContainer.addEventListener('submit', fillProfileValues);
 
 
