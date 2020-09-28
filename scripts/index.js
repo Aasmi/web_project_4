@@ -36,12 +36,15 @@ const closeImageButton = imageModalWindow.querySelector('.popup__close-button');
 
 
   /*****************Function Definitions ****************/
-function fillDefaultValues(modal){
+ 
+function fillDefaultEditProfileValues(){
   if (!editProfileModalWindow.classList.contains("popup_opened")){
     inputName.value = profileName.textContent;
     inputAboutme.value = profileAboutme.textContent;
-  }   
+  }  
+}
 
+function fillDefaultCardModalValues(){
   if(!addCardModalWindow.classList.contains("popup_opened")){
     inputTitle.value = "";
     inputLink.value = "";
@@ -105,12 +108,12 @@ initialCards.forEach(function (data) {
 /***************************Profile changes events and functions*******************/
 
 editButton.addEventListener('click', ()=>{  
-    fillDefaultValues(editProfileModalWindow);  
+    fillDefaultEditProfileValues();
     togglePopup(editProfileModalWindow);
 });
 
 closeProfileButton.addEventListener('click', ()=>{
-    fillDefaultValues(editProfileModalWindow);
+    fillDefaultEditProfileValues();
     togglePopup(editProfileModalWindow);
 });
 
@@ -121,12 +124,12 @@ editProfileModalWindow.addEventListener('submit', fillProfileValues);
 /***************************Add Card events and functions*******************/
 
 addButton.addEventListener('click', () =>{
-    fillDefaultValues(addCardModalWindow);
+    fillDefaultCardModalValues();
     togglePopup(addCardModalWindow);
 });
 
 closeCardButton.addEventListener('click', ()=>{
-    fillDefaultValues(addCardModalWindow);
+    fillDefaultCardModalValues();
     togglePopup(addCardModalWindow);
 });
 
