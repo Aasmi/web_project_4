@@ -9,6 +9,7 @@
 @import url('./__figure/popup__figure.css');
 @import url('./__image/popup__image.css');
 @import url('./__image-title/popup__image-title.css');
+@import url('./_type_image/popup_type_image.css');
 
 .popup{
     display:flex;
