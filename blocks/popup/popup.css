@@ -5,9 +5,13 @@
 @import url('./__close-button/popup__close-button.css');
 @import url('./__field/popup__field.css');
 @import url('./__container/popup__container.css');
+@import url('./__content/popup__content.css');
+@import url('./__figure/popup__figure.css');
+@import url('./__image/popup__image.css');
+@import url('./__image-title/popup__image-title.css');
 
 .popup{
-    display:none;
+    display:flex;
     flex-direction:column;
     position:fixed;
     top:0;
@@ -16,5 +20,8 @@
     height:100%;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.5);    
+    background-color: rgba(0, 0, 0, 0.5); 
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.7s, opacity 0.7s linear;  
 }

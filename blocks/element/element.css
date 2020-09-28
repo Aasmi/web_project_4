@@ -2,6 +2,7 @@
 @import url('./__description/element__description.css');
 @import url('./__text/element__text.css');
 @import url('./__like-button/element__like-button.css');
+@import url('./__delete-button/element__delete-button.css');
 
 .element{
     width: 282px;
