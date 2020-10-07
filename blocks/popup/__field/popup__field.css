@@ -5,6 +5,10 @@
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
+.popup__field:invalid{
+  border-bottom: 1px solid rgba(255,0,0,0.2);
+}
+
 @media screen and (max-width: 350px) {
     .popup__field{
       max-width: 210px;

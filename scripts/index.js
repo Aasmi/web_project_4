@@ -4,6 +4,8 @@ const addCardModalWindow = document.querySelector('.popup_type_add-card');
 const editProfileModalWindow = document.querySelector('.popup_type_edit-profile');
 const imageModalWindow = document.querySelector('.popup_type_image');
 
+const pageContainer = document.querySelector('.page__container');
+
 
 /*****************Modal Fields Definitions *******************/
 const inputName = document.querySelector('.popup__field_type_name');
@@ -35,8 +37,7 @@ const closeImageButton = imageModalWindow.querySelector('.popup__close-button');
   const list = document.querySelector('.elements');
 
 
-  /*****************Function Definitions ****************/
- 
+  /*****************Function Definitions ****************/ 
 function fillDefaultEditProfileValues(){
   if (!editProfileModalWindow.classList.contains("popup_opened")){
     inputName.value = profileName.textContent;
@@ -51,9 +52,33 @@ function fillDefaultCardModalValues(){
     }    
 }
 
-function togglePopup(modal){     
+/*function togglePopup(modal){   
+    modal.classList.toggle('popup_opened');    
+}*/
+
+function togglePopup(modal){  
+    if(!modal.classList.contains('popup_opened')) { 
+        modal.addEventListener('click', closeModalOutside); 
+        window.addEventListener('keydown', escCloseModal); 
+    } 
+    else { 
+        modal.removeEventListener('click', closeModalOutside); 
+        window.removeEventListener('keydown', escCloseModal); 
+    }  
     modal.classList.toggle('popup_opened');    
 }
+
+function closeModalOutside(event) { 
+    togglePopup(event.target);
+  } 
+   
+  // Function To Close Modals on Esc 
+  function escCloseModal(event) { 
+    if (event.key === 'Escape') { 
+      const openModal = document.querySelector('.popup_opened'); 
+      togglePopup(openModal); 
+    } 
+  }
 
 function renderNewCard(data){    
     const cardElement = cardTemplate.cloneNode(true);

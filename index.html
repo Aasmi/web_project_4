@@ -37,8 +37,11 @@
                     <button class="popup__close-button" type="button"></button>              
                     <div class="popup__edit-form">
                         <h2 class="popup__text">Edit Profile</h2>
-                        <input type="text" value="" placeholder="Name" class="popup__field popup__field_type_name" name="profileName" required>
-                        <input type="text" value="" placeholder="About Me" class="popup__field popup__field_type_aboutme" name="profileAboutMe" required>
+                        <input id="popup-name" type="text" value="" placeholder="Name" class="popup__field popup__field_type_name" minlength="2" maxlength="40" name ="profileName" required>
+                        <span id="popup-name-error"></span>
+
+                        <input id="popup-aboutme" type="text" value="" placeholder="About Me" class="popup__field popup__field_type_aboutme" minlength="2" maxlength="200" name="profileAboutMe" required>
+                        <span id="popup-aboutme-error"></span>
                         <button class="popup__save-button" type="submit">Save</button>
                     </div>
                 </form>
@@ -49,8 +52,11 @@
                     <button class="popup__close-button" type="button"></button>              
                     <div class="popup__edit-form">
                         <h2 class="popup__text">New Place</h2>
-                        <input type="text" value="" placeholder="Title" class="popup__field popup__field_card-title" name="Title" required>
-                        <input type="url" value="" placeholder="Image Link" class="popup__field popup__field_card-url" name="Image Link" required>
+                        <input id="popup-title" type="text" value="" placeholder="Title" class="popup__field popup__field_card-title" name="Title" minlength="2" maxlength="30" required>
+                        <span id="popup-title-error"></span>
+
+                        <input id="popup-card-url" type="url" value="" placeholder="Image Link" class="popup__field popup__field_card-url" name="Image Link" required>
+                        <span id="popup-card-url-error"></span>
                         <button class="popup__save-button" type="submit">Save</button>
                     </div>
                 </form>
@@ -67,7 +73,7 @@
         </div>
         <template class="card-template">
             <li class="element">                    
-                <div class="element__image" style=""></div> 
+                <div class="element__image" style =""></div> 
                 <button class="element__delete-button" type="button"></button>              
                 <div class="element__description">
                     <h2 class="element__text"></h2>
@@ -77,5 +83,6 @@
         </template>  
         <script src="./scripts/initialCards.js"></script>          
         <script src="./scripts/index.js"></script>
+        <script src="./scripts/validation.js"></script>
     </body>
 </html>
