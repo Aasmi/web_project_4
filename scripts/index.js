@@ -4,9 +4,6 @@ const addCardModalWindow = document.querySelector('.popup_type_add-card');
 const editProfileModalWindow = document.querySelector('.popup_type_edit-profile');
 const imageModalWindow = document.querySelector('.popup_type_image');
 
-const pageContainer = document.querySelector('.page__container');
-
-
 /*****************Modal Fields Definitions *******************/
 const inputName = document.querySelector('.popup__field_type_name');
 const inputAboutme = document.querySelector('.popup__field_type_aboutme');
@@ -119,16 +116,14 @@ function fillProfileValues(event){
 function fillCardValues(event){
     event.preventDefault();
     const tempObject = {};
-    tempObject["name"] = inputTitle.value;
-    tempObject["link"] = inputLink.value;
+    tempObject.name = inputTitle.value;
+    tempObject.link = inputLink.value;
 
     list.prepend(renderNewCard(tempObject));
     togglePopup(addCardModalWindow);
 }
 
-initialCards.forEach(function (data) { 
-    list.prepend(renderNewCard(data));
-});
+initialCards.forEach((data) => list.prepend(renderNewCard(data)));
 
 /***************************Profile changes events and functions*******************/
 
@@ -150,6 +145,8 @@ editProfileModalWindow.addEventListener('submit', fillProfileValues);
 
 addButton.addEventListener('click', () =>{
     fillDefaultCardModalValues();
+    const saveButton = addCardModalWindow.querySelector('.popup__save-button');
+    saveButton.classList.add('popup__save-button_disabled');
     togglePopup(addCardModalWindow);
 });
 
