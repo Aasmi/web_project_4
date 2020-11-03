@@ -1,3 +1,15 @@
+import FormValidator from './FormValidator.js';
+import Card from './Card.js';
+
+/*****************Config Definitions ************************/
+const defaultConfig = {
+  formSelector: ".popup__container",
+  inputSelector: ".popup__field",
+  submitButtonSelector: ".popup__save-button",
+  inactiveButtonClass: "popup__save-button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible"
+}
 
 /*****************Container Definitions************************/
 const addCardModalWindow = document.querySelector('.popup_type_add-card');
@@ -12,10 +24,8 @@ const profileName = document.querySelector('.profile__name');
 const profileAboutme = document.querySelector('.profile__about-me');
 
 const inputTitle = document.querySelector('.popup__field_card-title');
-const inputLink = document.querySelector('.popup__field_card-url');
+const inputLink = document.querySelector('.popup__field_card-url'); 
 
-const popupImage = imageModalWindow.querySelector('.popup__image');
-const popupImageTitle = imageModalWindow.querySelector('.popup__image-title');
 
 
 /******************button Definitions *****************/
@@ -28,13 +38,18 @@ const closeCardButton = addCardModalWindow.querySelector('.popup__close-button')
 const closeImageButton = imageModalWindow.querySelector('.popup__close-button');
 
 
-/************************Other global variable Definitions *******************/
-
-  const cardTemplate = document.querySelector('.card-template').content.querySelector('.element');
+/************************Other global variable Definitions *******************/  
   const list = document.querySelector('.elements');
 
 
-  /*****************Function Definitions ****************/ 
+/***********************Validation Definitions ****************************/
+const editFormValidator = new FormValidator(defaultConfig, editProfileModalWindow);
+const addCardFormValidator = new FormValidator(defaultConfig, addCardModalWindow);
+
+editFormValidator.enableValidation();
+addCardFormValidator.enableValidation();
+
+/************************Function Definitions ******************************/ 
 function fillDefaultEditProfileValues(){
   if (!editProfileModalWindow.classList.contains("popup_opened")){
     inputName.value = profileName.textContent;
@@ -48,10 +63,6 @@ function fillDefaultCardModalValues(){
     inputLink.value = "";
     }    
 }
-
-/*function togglePopup(modal){   
-    modal.classList.toggle('popup_opened');    
-}*/
 
 function togglePopup(modal){  
     if(!modal.classList.contains('popup_opened')) { 
@@ -77,35 +88,6 @@ function closeModalOutside(event) {
     } 
   }
 
-function renderNewCard(data){    
-    const cardElement = cardTemplate.cloneNode(true);
-
-    const cardImage = cardElement.querySelector('.element__image');
-    const cardDeleteButton = cardElement.querySelector('.element__delete-button');
-    const cardText = cardElement.querySelector('.element__text');
-    const cardLikeButton = cardElement.querySelector('.element__like-button');
-        
-    cardText.textContent = data.name;
-    cardImage.style.backgroundImage = `url(${data.link})`;  
-
-    cardLikeButton.addEventListener('click', ()=>{
-        cardLikeButton.classList.toggle('element__like-button_dark');
-    });
-
-    cardDeleteButton.addEventListener('click', ()=>{
-       cardElement.remove();
-    });
-    
-    cardImage.addEventListener('click', ()=>{
-        popupImage.src = data.link;
-        popupImageTitle.textContent = data.name;
-
-        togglePopup(imageModalWindow);
-    });
-
-    return(cardElement);    
-  }
-
 function fillProfileValues(event){
     event.preventDefault();       
     profileName.textContent = inputName.value;
@@ -119,11 +101,12 @@ function fillCardValues(event){
     tempObject.name = inputTitle.value;
     tempObject.link = inputLink.value;
 
-    list.prepend(renderNewCard(tempObject));
+    list.prepend(new Card(tempObject, '.card-template').renderNewCard());
     togglePopup(addCardModalWindow);
 }
 
-initialCards.forEach((data) => list.prepend(renderNewCard(data)));
+
+initialCards.forEach((data) => list.prepend(new Card(data, '.card-template').renderNewCard()));
 
 /***************************Profile changes events and functions*******************/
 
@@ -139,8 +122,6 @@ closeProfileButton.addEventListener('click', ()=>{
 
 
 editProfileModalWindow.addEventListener('submit', fillProfileValues);
-
-
 /***************************Add Card events and functions*******************/
 
 addButton.addEventListener('click', () =>{
