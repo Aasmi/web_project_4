@@ -1,5 +1,6 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
+import {togglePopup} from './Utils.js';
 
 /*****************Config Definitions ************************/
 const defaultConfig = {
@@ -63,30 +64,6 @@ function fillDefaultCardModalValues(){
     inputLink.value = "";
     }    
 }
-
-function togglePopup(modal){  
-    if(!modal.classList.contains('popup_opened')) { 
-        modal.addEventListener('click', closeModalOutside); 
-        window.addEventListener('keydown', escCloseModal); 
-    } 
-    else { 
-        modal.removeEventListener('click', closeModalOutside); 
-        window.removeEventListener('keydown', escCloseModal); 
-    }  
-    modal.classList.toggle('popup_opened');    
-}
-
-function closeModalOutside(event) { 
-    togglePopup(event.target);
-  } 
-   
-  // Function To Close Modals on Esc 
-  function escCloseModal(event) { 
-    if (event.key === 'Escape') { 
-      const openModal = document.querySelector('.popup_opened'); 
-      togglePopup(openModal); 
-    } 
-  }
 
 function fillProfileValues(event){
     event.preventDefault();       
