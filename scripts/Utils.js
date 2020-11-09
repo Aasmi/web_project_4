@@ -24,4 +24,9 @@ export function escCloseModal(event) {
     } 
   }
 
+export function saveButtonDisabled(modal){
+  const inactiveButton = modal.querySelector('.popup__save-button');
+  inactiveButton.classList.add('popup__save-button_disabled');
+}
+
   

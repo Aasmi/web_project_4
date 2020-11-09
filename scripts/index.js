@@ -1,6 +1,6 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
-import {togglePopup} from './Utils.js';
+import {togglePopup, saveButtonDisabled} from './Utils.js';
 
 /*****************Config Definitions ************************/
 const defaultConfig = {
@@ -103,8 +103,7 @@ editProfileModalWindow.addEventListener('submit', fillProfileValues);
 
 addButton.addEventListener('click', () =>{
     fillDefaultCardModalValues();
-    const saveButton = addCardModalWindow.querySelector('.popup__save-button');
-    saveButton.classList.add('popup__save-button_disabled');
+    saveButtonDisabled(addCardModalWindow);
     togglePopup(addCardModalWindow);
 });
 

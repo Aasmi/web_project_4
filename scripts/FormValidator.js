@@ -1,3 +1,5 @@
+import {saveButtonDisabled} from './Utils.js';
+
 class FormValidator{
     constructor(settings, formElement){
         this._settings = settings;
@@ -38,7 +40,7 @@ class FormValidator{
         }
         else{
             button.disabled = true;
-            button.classList.add(this._settings.inactiveButtonClass);
+            saveButtonDisabled(this._formElement);
         }
     }
 

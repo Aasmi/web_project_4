@@ -1,4 +1,4 @@
-import {togglePopup} from './Utils.js';
+import {togglePopup, escCloseModal} from './Utils.js';
 
 class Card{
     constructor({name, link}, cardTemplateSelector){
