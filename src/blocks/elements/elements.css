@@ -1,0 +1,28 @@
+
+
+.elements{
+    width: 882px;
+    /*height: 744px;*/
+    margin:51px auto auto auto;
+    list-style: none;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-inline-start:0px;
+}
+
+
+@media screen and (max-width:780px){
+    .elements{
+        width:600px;
+        margin:auto;
+    }
+}
+
+@media screen and (max-width:350px){
+    .elements{
+        width: 282px;
+        margin: auto 19px auto 19px;
+    }
+    
+}

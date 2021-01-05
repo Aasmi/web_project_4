@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="Author" content="Aasmi Maam">
+        <!--<link rel="stylesheet" href="./pages/index.css"> -->
+        <title>Around The U.S.</title>
+    </head>
+    <body class="page">
+        <div class="page__container">
+            <header class="header">
+                <img class="header__vector" src="./images/logo.svg" alt="Around U.S">
+            </header>
+            <main class="content">
+                <section class="profile">
+                    <div class="profile__avatar"></div>
+                    <div class="profile__info">
+                            <h1 class="profile__name">Jacques Cousteau</h1>
+                            <button class="profile__edit-button" type="button"></button>
+                            <p class="profile__about-me">Explorer</p>                          
+                    </div>
+                    <button class="profile__add-button" type="button"></button>                 
+                </section>
+                
+                <section>
+                <ul class="elements">
+                                 
+                </ul>
+                </section>
+            </main>
+            <footer class="footer"> 
+                <p>&copy; 2020 Around The U.S.</p>               
+            </footer>
+            <div class="popup popup_type_edit-profile"> 
+                <form action="#" class="popup__container" name="edit-form"> 
+                    <button class="popup__close-button" type="button"></button>              
+                    <div class="popup__edit-form">
+                        <h2 class="popup__text">Edit Profile</h2>
+                        <input id="popup-name" type="text" value="" placeholder="Name" class="popup__field popup__field_type_name" minlength="2" maxlength="40" name ="profileName" required>
+                        <span id="popup-name-error"></span>
+
+                        <input id="popup-aboutme" type="text" value="" placeholder="About Me" class="popup__field popup__field_type_aboutme" minlength="2" maxlength="200" name="profileAboutMe" required>
+                        <span id="popup-aboutme-error"></span>
+                        <button class="popup__save-button" type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="popup popup_type_add-card"> 
+                <form action="#" class="popup__container" name="add-form"> 
+                    <button class="popup__close-button" type="button"></button>              
+                    <div class="popup__edit-form">
+                        <h2 class="popup__text">New Place</h2>
+                        <input id="popup-title" type="text" value="" placeholder="Title" class="popup__field popup__field_card-title" name="Title" minlength="2" maxlength="30" required>
+                        <span id="popup-title-error"></span>
+
+                        <input id="popup-card-url" type="url" value="" placeholder="Image Link" class="popup__field popup__field_card-url" name="Image Link" required>
+                        <span id="popup-card-url-error"></span>
+                        <button class="popup__save-button" type="submit">Add Image</button>
+                    </div>
+                </form>
+            </div>
+            <div class="popup popup_type_image"> 
+                <div class="popup__content">
+                    <button class="popup__close-button" type="button"></button> 
+                    <figure class="popup__figure">
+                        <img src="" class="popup__image" alt="">
+                        <figcaption class="popup__image-title"></figcaption>
+                    </figure> 
+                </div>         
+            </div>
+        </div>
+        <template class="card-template">
+            <li class="element">                    
+                <div class="element__image" style=""></div> 
+                <button class="element__delete-button" type="button"></button>              
+                <div class="element__description">
+                    <h2 class="element__text"></h2>
+                    <button class="element__like-button" type="button"></button>
+                </div>
+            </li>
+        </template>  
+        <!--<script src="./scripts/initialCards.js"></script> 
+        <script type="module" src="./scripts/index.js"></script> -->
+    </body>
+</html>
