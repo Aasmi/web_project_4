@@ -15,7 +15,7 @@ module.exports = {
         loader: "babel-loader",
         exclude: "/node_modules/"
       },
-      {
+      /*{
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -27,6 +27,13 @@ module.exports = {
           },
           "postcss-loader"
         ],
+      },*/
+      {
+        test: /\.css$/i,
+        loader: "css-loader",
+        options: {
+          url: true,
+        },
       },
       {
         test: /\.html$/,
