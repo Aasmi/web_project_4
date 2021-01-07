@@ -6,7 +6,7 @@ This project will be used to maintain a site for scenic places Around U.S. Indiv
 
 This site will be developed in coming sprints and initial structure for the same is developed in this project
 
-* [Link to the project]( https://aasmi.github.io/web_project_4/)
+* [Link to the project](https://aasmi.github.io/web_project_4/)
 
 **Images**
 
