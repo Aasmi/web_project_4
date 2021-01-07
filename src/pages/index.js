@@ -1,8 +1,12 @@
 import "./index.css";
 
-import FormValidator from '../scripts/FormValidator.js';
-import Card from '../scripts/Card.js';
-import {togglePopup, saveButtonDisabled} from '../scripts/Utils.js';
+/*import FormValidator from '../scripts/FormValidator.js';
+import Card from '../scripts/Card.js';*/
+import {togglePopup, saveButtonDisabled} from '../components/Utils.js';
+import FormValidator from '../components/FormValidator.js';
+import Card from '../components/Card.js';
+import initialCards from '../components/initialCards.js'
+
 
 /*****************Config Definitions ************************/
 const defaultConfig = {

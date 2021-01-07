@@ -1,9 +1,10 @@
 import {togglePopup, escCloseModal} from './Utils.js';
 
 class Card{
-    constructor({name, link}, cardTemplateSelector){
+    constructor({name, link, handleCardClick}, cardTemplateSelector){
         this._text = name;
         this._link = link;
+        this._handleCardClick = handleCardClick;
         this._cardTemplateSelector = cardTemplateSelector;
     }
 
@@ -54,3 +55,7 @@ class Card{
 }
 
 export default Card;
+
+
+
+
