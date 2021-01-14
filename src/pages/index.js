@@ -51,15 +51,15 @@ addFormPopup.setEventListeners();
 
 
 const userInformation =  new UserInfo ({
-  nameSelector: '.profile__info-title',
-  jobSelector: '.profile__info-subtitle'
+  name: '.profile__info-title',
+  aboutMe: '.profile__info-subtitle'
 })
 
 
 const editFormPopup = new PopupWithForm({
   popupSelector: '.popup_type_edit',
-  popupSubmit: ([nameSelector, jobSelector]) => {
-    userInformation.setUserInfo(nameSelector, jobSelector); 
+  popupSubmit: ([name, aboutMe]) => {
+    userInformation.setUserInfo(name, aboutMe); 
   } 
 })  
 
