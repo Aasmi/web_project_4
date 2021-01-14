@@ -1,9 +1,0 @@
-.popup__figure{
-    display: flex;
-    flex-direction:column;
-    margin-top:35px;
-    margin-inline-end: 5px;
-    justify-content: center;
-    align-content: center;
-}
-    

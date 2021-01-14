@@ -4,83 +4,76 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="Author" content="Aasmi Maam">
-        <!--<link rel="stylesheet" href="./pages/index.css"> -->
         <title>Around The U.S.</title>
     </head>
-    <body class="page">
-        <div class="page__container">
+    <body class="body">
             <header class="header">
-                <img class="header__vector" src="./images/logo.svg" alt="Around U.S">
+                <img src="images/logo.svg" alt="Around the US" class="logo">
             </header>
             <main class="content">
                 <section class="profile">
-                    <div class="profile__avatar"></div>
+                        <img class="profile__image" src="images/cousteau.png" alt="Profile Avatar">
                     <div class="profile__info">
-                            <h1 class="profile__name">Jacques Cousteau</h1>
-                            <button class="profile__edit-button" type="button"></button>
-                            <p class="profile__about-me">Explorer</p>                          
+                        <h1 class="profile__info-title">Jacques Cousteau</h1>
+                        <button class="profile__edit-button" aria-label="Edit"></button>
+                        <p class="profile__info-subtitle">Explorer</p>   
                     </div>
-                    <button class="profile__add-button" type="button"></button>                 
+                    <button class="profile__add-button" aria-label="Add"></button>
                 </section>
-                
-                <section>
-                <ul class="elements">                         
-                </ul>
-                </section>
+                <section class="elements"></section>
             </main>
-            <footer class="footer"> 
-                <p>&copy; 2020 Around The U.S.</p>               
+            <footer class="footer">
+                <p class="footer__info">© 2020 Around The U.S.</p>
             </footer>
-            <div class="popup popup_type_edit-profile"> 
-                <form action="#" class="popup__container" name="edit-form"> 
-                    <button class="popup__close-button" type="button"></button>              
-                    <div class="popup__edit-form">
-                        <h2 class="popup__text">Edit Profile</h2>
-                        <input id="popup-name" type="text" value="" placeholder="Name" class="popup__field popup__field_type_name" minlength="2" maxlength="40" name ="profileName" required>
-                        <span id="popup-name-error"></span>
 
-                        <input id="popup-aboutme" type="text" value="" placeholder="About Me" class="popup__field popup__field_type_aboutme" minlength="2" maxlength="200" name="profileAboutMe" required>
-                        <span id="popup-aboutme-error"></span>
-                        <button class="popup__save-button" type="submit">Save</button>
-                    </div>
-                </form>
-            </div>
+            <div class="popup popup_type_edit">
+                <div class="popup__container">
+                    <form action="#" class="popup__form edit-form" novalidate>
+                      <h2 class="popup__title">Edit profile</h2>
+                        
+                        <input id = "profile-name" type='text' name='name' class="popup__input popup__input_type_name" value= "Jacques Costeau" placeholder='Jacques Cousteau' required maxlength="40" minlength="2">
+                        <span id="profile-name-error" class = "popup__error"></span>
 
-            <div class="popup popup_type_add-card"> 
-                <form action="#" class="popup__container" name="add-form"> 
-                    <button class="popup__close-button" type="button"></button>              
-                    <div class="popup__edit-form">
-                        <h2 class="popup__text">New Place</h2>
-                        <input id="popup-title" type="text" value="" placeholder="Title" class="popup__field popup__field_card-title" name="Title" minlength="2" maxlength="30" required>
-                        <span id="popup-title-error"></span>
+                        <input id = "profile-text" type='text' name='job' class='popup__input popup__input_type_job' value="Explorer" placeholder='Explorer' required maxlength="200" minlength="2">
+                        <span id="profile-text-error" class = "popup__error"></span>
 
-                        <input id="popup-card-url" type="url" value="" placeholder="Image Link" class="popup__field popup__field_card-url" name="Image Link" required>
-                        <span id="popup-card-url-error"></span>
-                        <button class="popup__save-button" type="submit">Add Image</button>
-                    </div>
-                </form>
-            </div>
-            <div class="popup popup_type_image"> 
-                <div class="popup__content">
-                    <button class="popup__close-button" type="button"></button> 
-                    <figure class="popup__figure">
-                        <img class="popup__image" alt="">
-                        <figcaption class="popup__image-title"></figcaption>
-                    </figure> 
-                </div>         
-            </div>
-        </div>
-        <template class="card-template">
-            <li class="element">                    
-                <div class="element__image" style=""></div> 
-                <button class="element__delete-button" type="button"></button>              
-                <div class="element__description">
-                    <h2 class="element__text"></h2>
-                    <button class="element__like-button" type="button"></button>
+                        <button class="popup__save" type="submit" aria-label="Save">Save</button>
+                        <button class="popup__close-button" type="reset" aria-label="Close Form"></button>
+                    </form>
                 </div>
-            </li>
-        </template>  
-        <!--<script src="./scripts/initialCards.js"></script> 
-        <script type="module" src="./scripts/index.js"></script> -->
+            </div>
+
+                <div class="popup popup_type_add-card">
+                    <div class="popup__container">
+                      <form action="#" class="popup__form add-form" novalidate>
+                        <h2 class="popup__title">New Place</h2>
+                            <input id="card-title" type='text' name='card-title' class="popup__input popup__input_type_title" placeholder='Title' required maxlength="30" minlength="2">
+                            <span id="card-title-error" class = "popup__error"></span>
+
+                            <input id="card-url" type='url' name='card-link' class='popup__input popup__input_type_link' placeholder='Image Link' required>
+                            <span id="card-url-error" class = "popup__error"></span>
+                            
+                            <button class="popup__save" type="submit" aria-label="Create">Create</button>
+                            <button class="popup__close-button" type="reset" aria-label="Close Form"></button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="popup popup_type_image">
+                    <div class="popup_container_type_image">
+                            <img alt="Popup Image Picture" class="popup__image">
+                            <h3 class= "popup__caption"></h3>
+                            <button class="popup__close-button" type="reset" aria-label="Close Form"></button>
+                    </div>
+                </div>
+                
+            <template class = "card__template">
+                <figure class="elements__element">
+                    <img src(unknown) class="elements__image" alt="card image">
+                    <figcaption class="elements__caption"></figcaption>
+                    <button class="elements__favorite" type="button" aria-label="Like"></button>
+                    <button class="elements__trash" type="button" aria-label="Delete"></button>
+                </figure>
+            </template>
     </body>
 </html>

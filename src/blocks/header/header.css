@@ -1,22 +1,23 @@
-@import url('./__vector/header__vector.css');
-
-.header{
+.header {
+    display: flex;
+    flex-direction: column;
+    padding-top: 45px;
+    margin: 0 auto;
     max-width: 882px;
-    min-height: 74px;
-    margin: 45px auto auto auto;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    max-height: 74px;
+    border-bottom: 1px solid rgba(84,84,84,.7);
+
 }
 
-@media screen and (max-width:780px){
-    .header{
-        width: 600px;
-        margin: 30px auto auto auto;
+@media screen and (max-width: 1120px) {
+    .header {
+        max-width: 750px;
     }
 }
 
-@media screen and (max-width:350px){
-    .header{
-        width: 320px;
-        margin: 28px auto auto auto;
-    }
+@media screen and (max-width: 725px) {
+    .header {
+        max-width: 320px;
+        padding-top: 28px;
+        }
 }

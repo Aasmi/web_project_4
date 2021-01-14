@@ -1,28 +1,23 @@
-
+@import url("./__element/elements__element.css");
+@import url("./__caption/elements__caption.css");
+@import url("./__favorite/elements__favorite.css");
+@import url("./__favorite/_selected/elements__favorite_selected.css");
+@import url("./__trash/elements__trash.css");
+@import url("./__image/elements__image.css");
 
 .elements{
-    width: 882px;
-    /*height: 744px;*/
-    margin:51px auto auto auto;
-    list-style: none;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-inline-start:0px;
+    margin: 47.25px auto 66px;
+    display: grid;
+    max-width: 880px;
+    grid-template-columns: repeat(auto-fill, 282px);
+    grid-auto-rows: 361px;
+    grid-row-gap: 20px;
+    grid-column-gap: 17px;
+    justify-content: center;
 }
 
-
-@media screen and (max-width:780px){
-    .elements{
-        width:600px;
-        margin:auto;
+@media screen and (max-width: 880px) {
+    .elements {
+        margin: 0 auto 48px;
     }
-}
-
-@media screen and (max-width:350px){
-    .elements{
-        width: 282px;
-        margin: auto 19px auto 19px;
-    }
-    
 }

@@ -1,61 +1,39 @@
-import {togglePopup, escCloseModal} from './Utils.js';
-
-class Card{
-    constructor({name, link, handleCardClick}, cardTemplateSelector){
-        this._text = name;
-        this._link = link;
+export default class Card {
+    constructor ({data, handleCardClick}, template){
+        this._link = data.link;
+        this._name = data.name;
+        this._template = template;
         this._handleCardClick = handleCardClick;
-        this._cardTemplateSelector = cardTemplateSelector;
     }
 
-    _cardLikeButtonListener(evt){
-        evt.target.classList.toggle('element__like-button_dark');
+    _getCardTemplate (){
+        return this._template.cloneNode(true);
     }
 
-    _cardDeleteButtonListener(evt){
-        evt.target.parentNode.remove();
+    _handleTrashClick(e){
+        e.target.closest('.elements__element').remove(); 
     }
 
-    _setcardTemplateSelector(){
-        const cardTemplate = document.querySelector(this._cardTemplateSelector).content.querySelector('.element');
-        return cardTemplate;
+    _handleCardLike(e){
+        e.target.classList.toggle('elements__favorite_selected'); 
     }
 
-    _cardImageClickListener(){
-        const imageModalWindow = document.querySelector('.popup_type_image');
-        const popupImage = imageModalWindow.querySelector('.popup__image');
-        const popupImageTitle = imageModalWindow.querySelector('.popup__image-title');
-
-        popupImage.src = this._link;
-        popupImageTitle.textContent = this._text;
-        popupImage.alt = this._text;
-        togglePopup(imageModalWindow);
+    _setEventListeners() {
+        this._cardLike.addEventListener("click", this._handleCardLike);
+        this._cardTrash.addEventListener("click", this._handleTrashClick);
+        this._cardImage.addEventListener("click", () => this._handleCardClick(this._name, this._link));
     }
 
-    renderNewCard(){        
-        const cardTemplateNewCard = this._setcardTemplateSelector();
-        const cardElement = cardTemplateNewCard.cloneNode(true);
-    
-        const cardImage = cardElement.querySelector('.element__image');
-        const cardDeleteButton = cardElement.querySelector('.element__delete-button');
-        const cardText = cardElement.querySelector('.element__text');
-        const cardLikeButton = cardElement.querySelector('.element__like-button');
-      
-        cardText.textContent = this._text;
-        cardImage.style.backgroundImage = `url(${this._link})`;
-        cardImage.style.alt = this._text;
-        
-        cardLikeButton.addEventListener('click', this._cardLikeButtonListener.bind(this));
-        cardDeleteButton.addEventListener('click', this._cardDeleteButtonListener);        
-        cardImage.addEventListener('click', this._cardImageClickListener.bind(this));
-    
-        return(cardElement);    
-      }
-
-}
-
-export default Card;
-
-
-
-
+    createCard() { 
+        this._cardElement = this._getCardTemplate();
+        this._cardTitle = this._cardElement.querySelector('.elements__caption'); 
+        this._cardImage = this._cardElement.querySelector('.elements__image'); 
+        this._cardLike = this._cardElement.querySelector('.elements__favorite'); 
+        this._cardTrash = this._cardElement.querySelector('.elements__trash');            
+        this._cardTitle.textContent = this._name; 
+        this._cardImage.setAttribute('src', this._link); 
+        this._cardImage.setAttribute('alt', this._name); 
+        this._setEventListeners();
+        return this._cardElement;
+    }
+}; 

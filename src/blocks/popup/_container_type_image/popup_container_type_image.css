@@ -1,0 +1,19 @@
+.popup_container_type_image {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 30px;
+    padding: 0;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+
+  /*padding: 0;
+width: auto;
+height: auto;
+top: 30px;
+flex-direction: column;
+background: none;*/
