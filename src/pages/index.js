@@ -1,5 +1,5 @@
 import "./index.css";
-import {defaultConfig, editModal, addModal, editForm, addForm, cardTemplate, list, editButton, addButton, createButton } from "../utils/constants.js";
+import {defaultConfig,  editForm, addForm, cardTemplate, list, editButton, addButton, nameInput, aboutMeInput } from "../utils/constants.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
 import Card from "../components/Card.js";
@@ -67,15 +67,25 @@ editFormPopup.setEventListeners();
 
 
 addButton.addEventListener('click', (e) => {
-  addFormValidator.disableButton();  
-  addForm.reset();
+  addFormValidator.disableButton();
+  addFormValidator.hideErrors();  
   addFormPopup.open();
  });
 
- 
+ /*
  editButton.addEventListener('click', (e) => {
    userInformation.getUserInfo()
    editFormPopup.open();
+}) */
+
+editButton.addEventListener('click', (e) => {
+  const [name, aboutMe] = userInformation.getUserInfo()
+  nameInput.value = name
+  aboutMeInput.value = aboutMe
+  editFormValidator.hideErrors()
+  editFormPopup.open();
 }) 
+
+
 
 

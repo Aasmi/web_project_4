@@ -19,13 +19,14 @@ const defaultConfig = {
   const editButton = document.querySelector('.profile__edit-button');
   const addButton = document.querySelector('.profile__add-button');
   const createButton = addModal.querySelector('.popup__save');
-/*
+
 const nameInput = document.querySelector('.popup__input_type_name'); 
 const aboutMeInput = document.querySelector('.popup__input_type_job'); 
+/*
 const profileName = document.querySelector('.profile__info-title'); 
 const profileJob = document.querySelector('.profile__info-subtitle');  
 const titleInput = addForm.querySelector('.popup__input_type_title'); 
 const linkInput = addForm.querySelector('.popup__input_type_link'); 
 const profileInfo = new UserInfo(profileName, profileJob);*/
 
-  export {defaultConfig, editModal, addModal, editForm, addForm, cardTemplate, list, editButton, addButton, createButton}
+  export {defaultConfig, editModal, addModal, editForm, addForm, cardTemplate, list, editButton, addButton, createButton, nameInput, aboutMeInput}
