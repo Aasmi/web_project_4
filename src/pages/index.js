@@ -35,7 +35,7 @@ function createItem(cardInfo) {
 const cardSection = new Section({
   items: initialCards,
   renderer: createItem
-}, list)
+}, list);
 
 cardSection.renderer();
 
@@ -45,15 +45,15 @@ const addFormPopup = new PopupWithForm({
     const newCard = createItem({name, link})
     cardSection.addItem(newCard);
    }
-  })
+  });
 
 addFormPopup.setEventListeners();
 
 
-const userInformation =  new UserInfo ({
+const userInformation =  new UserInfo({
   name: '.profile__info-title',
-  aboutMe: '.profile__info-subtitle'
-})
+  aboutMe: '.profile__info-subtitle'  
+});
 
 
 const editFormPopup = new PopupWithForm({
@@ -61,7 +61,7 @@ const editFormPopup = new PopupWithForm({
   popupSubmit: ([name, aboutMe]) => {
     userInformation.setUserInfo(name, aboutMe); 
   } 
-})  
+});
 
 editFormPopup.setEventListeners();
 
@@ -74,8 +74,8 @@ addButton.addEventListener('click', (e) => {
 
  
  editButton.addEventListener('click', (e) => {
-  const userData = userInformation.getUserInfo()
-  editFormPopup.open();
+   userInformation.getUserInfo()
+   editFormPopup.open();
 }) 
 
 
