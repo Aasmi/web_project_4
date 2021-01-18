@@ -1,4 +1,4 @@
-.elements__trash {
+.elements__delete {
     background-image: url(../../../images/trashIcon.png);
     background-color: transparent;
     border: none;
@@ -11,7 +11,7 @@
     outline: none;
 }
 
-.elements__trash:hover{
-    opacity: 60%;
+.elements__delete:hover{
+    opacity: .6;
     transition: color 2s ease .5s; 
 }

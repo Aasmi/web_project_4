@@ -1,22 +1,25 @@
+import { jobInput } from "../utils/constants";
+
 export default class UserInfo {
-    constructor({name, aboutMe}){
+    constructor({name, job, avatar}){
         this._name = document.querySelector(name);
-        this._aboutMe = document.querySelector(aboutMe);
-        console.log("These are the userInfo values at the time of creation");
-        console.log(name);
-        console.log(aboutMe);
+        this._job = document.querySelector(job);
+        this._avatar = document.querySelector(avatar);
     }
 
     getUserInfo(){
-        console.log("Get User info fuction is invoked");
-        console.log(this._name.textContent+" "+ this._aboutMe.textContent);
-        return [this._name.textContent, this._aboutMe.textContent];
+        return this.userInfo = [this._name.textContent, this._job.textContent, this._avatar.src];
     }
 
-    setUserInfo(name, aboutMe) {
-        console.log("Set user info function is invoked");
-        console.log(name+" "+aboutMe);
-        this._name.textContent = name;
-        this._aboutMe.textContent = aboutMe;
+    setUserInfo(name, job, avatar) {
+        //this._userInfo = {nameSelector, jobSelector, avatar};
+         //if(avatar){
+            this._name.textContent = name;
+            this._job.textContent = job;
+            this._avatar.src = avatar;
+         //} else {
+         //   this._nameSelector.textContent = nameSelector;
+        //    this._jobSelector.textContent = jobSelector;
+        // }
     }
 } 

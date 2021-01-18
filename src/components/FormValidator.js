@@ -9,7 +9,7 @@ export default class FormValidator {
         this._buttonElement = this._form.querySelector(this._submitButtonSelector);
         this._inputs = [...this._form.querySelectorAll(this._inputSelector)];
     }
-
+    
     _showErrorMessage(inputElement) {
         const errorElement = this._form.querySelector("#" + inputElement.id + "-error");
         errorElement.textContent = inputElement.validationMessage;
@@ -24,6 +24,7 @@ export default class FormValidator {
         inputElement.classList.remove(this._inputErrorClass);
     }
 
+    
     _checkInputValidity(inputElement, inputErrorClass) {
         if(inputElement.validity.valid) {
             this._hideErrorMessage(inputElement, inputErrorClass);
@@ -32,9 +33,10 @@ export default class FormValidator {
         }
     }
 
-    _toggleButtonState() {
-       const isValid = this._inputs.every(input => input.validity.valid);
-       if(isValid) {
+    
+    _toggleButtonState(formElement, inputSelector) {
+        const isValid = this._inputs.every(input => input.validity.valid);
+        if(isValid) {
             this._buttonElement.classList.remove(this._inactiveButtonClass);
             this._buttonElement.disabled = false;
         } else {
@@ -42,12 +44,13 @@ export default class FormValidator {
             this._buttonElement.disabled = true;
         }
     }
-    
+
     disableButton() {
         this._buttonElement.classList.add(this._inactiveButtonClass);
         this._buttonElement.disabled = true;
     }
- 
+
+  
     _setEventListeners() {
         this._inputs.forEach(inputElement => {
             inputElement.addEventListener("input", () => {
@@ -55,19 +58,20 @@ export default class FormValidator {
                 this._toggleButtonState(this._form, this._inputSelector);
                 });
            });
-        };
+    }
     
     hideErrors(){
         this._inputs.forEach(inputElement => {
         this._hideErrorMessage(inputElement);
         })
-    }  
+    }     
 
   
    enableValidation () {
     this._form.addEventListener('submit', (e) => {
        e.preventDefault();
-       });       
+       });
+       
     this._setEventListeners();    
    };
 };

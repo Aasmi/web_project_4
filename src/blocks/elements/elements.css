@@ -1,9 +1,11 @@
 @import url("./__element/elements__element.css");
+@import url("./__element-pic/elements__element-pic.css");
 @import url("./__caption/elements__caption.css");
 @import url("./__favorite/elements__favorite.css");
 @import url("./__favorite/_selected/elements__favorite_selected.css");
-@import url("./__trash/elements__trash.css");
-@import url("./__image/elements__image.css");
+@import url("./__delete/elements__delete.css");
+@import url("./__likes/elements__likes.css");
+@import url("./__favorite-container/elements__favorite-container.css");
 
 .elements{
     margin: 47.25px auto 66px;
